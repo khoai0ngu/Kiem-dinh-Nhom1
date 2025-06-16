@@ -1,0 +1,171 @@
+/* Responsive styles for the teaching payment system */
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: relative;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .table {
+    font-size: 12px;
+  }
+
+  .btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 240px;
+  }
+
+  .content-area {
+    padding: 1.5rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1025px) {
+  body {
+    font-size: 18px;
+  }
+
+  .sidebar {
+    width: 300px;
+  }
+
+  .main-content {
+    margin-left: 300px;
+  }
+
+  .table {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 14px;
+    font-size: 18px;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+
+  .sidebar {
+    width: 250px;
+  }
+
+  .main-content {
+    margin-left: 250px;
+  }
+
+  .table {
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+
+/* Dark mode adjustments for responsive */
+@media (max-width: 768px) {
+  [data-theme="dark"] .sidebar {
+    background: var(--surface-color);
+    border-right: 1px solid var(--border-color);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --border-color: #000000;
+    --text-secondary: #000000;
+  }
+
+  [data-theme="dark"] {
+    --border-color: #ffffff;
+    --text-secondary: #ffffff;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus styles for accessibility */
+@media (any-hover: none) {
+  .btn:focus,
+  .nav-link:focus,
+  .form-input:focus,
+  .form-select:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .header,
+  .sidebar,
+  .content-actions,
+  .action-buttons,
+  .modal {
+    display: none !important;
+  }
+
+  .content-area {
+    margin-left: 0;
+    padding: 0;
+  }
+
+  .main-content {
+    margin-top: 0;
+  }
+
+  .stat-card,
+  .chart-card,
+  .table-container {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .table th {
+    background: #f5f5f5 !important;
+  }
+}
